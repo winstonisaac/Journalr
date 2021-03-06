@@ -1,0 +1,11 @@
+
+<h1><%= @task.name %></h1>
+<p><%= @task.details%></p>
+<p><%= @task.deadline%></p>
+<button id="delete">
+Delete Story
+</button>
+<button>
+<%= link_to "Edit Story", edit_category_task_path(@category, @task)%>
+</button>
+<%= javascript_pack_tag 'delete_record' %>

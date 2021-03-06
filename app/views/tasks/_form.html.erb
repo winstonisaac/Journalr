@@ -1,0 +1,26 @@
+<%= form_with model: [@category, @task], local: true do |form| %>
+  <div>
+    <%= form.label :name%><br>
+    <%= form.text_field :name, autocomplete: 'off'  %>
+    <% @task.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :details %><br>
+    <%= form.text_field :details %>
+    <% @task.errors.full_messages_for(:details).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :deadline%><br>
+    <%=date_field("task", "deadline", min: Date.today)%>
+    <% @task.errors.full_messages_for(:deadline).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

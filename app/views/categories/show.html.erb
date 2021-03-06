@@ -1,0 +1,15 @@
+<h1><%= @category.name %></h1>
+<p><%= @category.details %></p>
+<br/>
+<button id="delete">
+Delete Story
+</button>
+<button>
+<%= link_to "Edit Story", edit_category_path(@category)%>
+</button>
+<button>
+<%= link_to "Back to Categories", root_path %>
+</button>
+<%= link_to "Add Task", new_category_task_path(@category) %>
+<%= render "tasks/tasks"%>
+<%= javascript_pack_tag 'delete_record' %>
