@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#index'
   devise_for :users
-  root "categories#index"
   resources :categories do
     resources :tasks
   end

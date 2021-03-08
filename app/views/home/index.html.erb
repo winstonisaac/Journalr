@@ -1,0 +1,29 @@
+<header>
+  <img src="<%= image_path('logoType.svg')%>" id="logoIcon">
+  <div id="headerActions">
+    <button id="logIn">Log In</button>
+    <button id="signUp">Sign Up</button>
+  </div>
+</header>
+<div id="heroBanner">
+  <div id="heroContent">
+    <img src="<%= image_path('heroImage.png')%>" id="heroImage">
+    <h1>Take back control<br>of your <span id='fixKerning'>t</span>ime.</h1>
+  </div>
+</div>
+<div id="aboutJournalr">
+  <div id="aboutContent">
+    <img src="<%= image_path('ui.png')%>" id="UI">
+    <div id='aboutText'>
+      <h1>Organize it all <br>w<span id='fixKerning'>it</span>h <span id="brand">Journalr</span>.</h1>
+      <button id='getStarted'>Get Started</button>
+    </div>
+  </div>
+</div>
+<footer>
+  <img src="<%= image_path('logoType.svg')%>" id="logoType">
+  <div id="disclaimer">
+    Female 3D character<br>from <a href="https://icons8.com/illustrations/illustration/casual-life-3d-likes" target="_blank">icons8.com</a>
+  </div>
+</footer>
+<%= javascript_pack_tag 'landing_page'%>

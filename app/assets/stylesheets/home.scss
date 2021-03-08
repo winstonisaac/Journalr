@@ -1,0 +1,163 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$head-font: 'M PLUS Rounded 1c', sans-serif;
+$body-font: 'Sintony', Sans-Serif;
+$primary-color: #2598fd;
+$secondary-color: #1e1e1e;
+$animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%, #a7d6ff 45%, #a7d6ff 55%, #239afe 65%);
+
+h1, #fixKerning, #brand {
+  font-family: $head-font;
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: $primary-color;
+  margin-bottom: .85rem;
+  @media screen and (min-width: 1024px){
+    display: inline-block;
+    font-size: 2.5rem;
+  }
+  @media screen and (min-width: 1440px){
+    font-size: 3.5rem;
+  }
+}
+#fixKerning{
+  letter-spacing: -3px;
+}
+p, button {
+  font-family: $body-font;
+  font-size: .85rem;
+  color: $secondary-color;
+  @media screen and (min-width: 1440px){
+    font-size: 1.25rem;
+  }
+}
+#heroBanner, #aboutJournalr {
+  display: flex;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  //background-image: url('heroImage.png');
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+#heroContent{
+  width: 100%;  
+  @media screen and (min-width: 1024px){
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+#aboutJournalr {
+  padding-top: 0;
+}
+#heroImage, #UI {
+  width: 90%;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 768px){
+    width: 70%;
+  }
+  @media screen and (min-width: 1024px){
+    width: 50%;
+  }
+}
+#aboutContent {
+  width: 100%;
+  @media screen and (min-width: 1024px){
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+#aboutText {
+  @media screen and (min-width: 1024px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#logoIcon {
+  height: 2rem;
+  @media screen and (min-width: 1440px){
+    height: 3rem;
+  }
+}
+header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 1rem;
+  background-color: white;
+  @media screen and (min-width: 1024px){
+    padding: 2rem;
+  }
+}
+button {
+  cursor: pointer;
+  color: $primary-color;
+  background-color: white; 
+  margin-left: .35rem;
+  padding: .35rem .75rem;
+  border-radius: .5rem;
+  border: 1px solid $primary-color;
+  @media screen and (min-width: 1440px){
+    padding: .5rem 1.25rem;
+  }
+}
+#signUp, #getStarted{
+  color: white;
+  background: $animated-gradient;
+  background-size: 300% 100%;
+  background-position: left;
+  transition: all .5s ease
+}
+#getStarted{
+  border: none;
+  padding: .5rem 1.5rem;
+  font-size: 1.15rem;
+  @media screen and (min-width: 1440px){
+    font-size: 1.75rem;
+  }
+}
+#getStarted:hover, #signUp:hover{
+  background-position: right;
+  transition: all .5s ease
+}
+#brand {
+  font-weight: 900;
+}
+#logoType{
+  height: 2rem;
+  @media screen and (min-width: 1440px){
+    height: 2.5rem;
+  }
+}
+footer {
+  background-color: #edf4ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  @media screen and (min-width: 1024px){
+    padding: 2rem;
+  }
+}
+#disclaimer {
+  font-family: $body-font;
+  color: $primary-color;
+  font-size: .7rem;
+  text-align: right;
+  @media screen and (min-width: 1440px){
+    font-size: .85rem;
+  }
+}
+a{
+  font-family: inherit;
+  color: inherit;
+}
