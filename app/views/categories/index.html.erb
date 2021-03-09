@@ -1,8 +1,30 @@
-<h1>My Categories</h1>
-<% @categories.each do |category| %>
-  <h2><%= link_to category.name, category, data: { turbolinks: 'false'}%></h2>
-  <%= category.details%>
-<%end%>
-<button>
-<%= link_to "Add Category", new_category_path %>
-</button>
+<header class='nonLanding'>
+  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon"><h2>&nbsp;| Categories</h2>
+</header>
+<div id="categoriesProper">
+  <% @categories.each do |category| %>
+    <div class="categoryCard">
+      <h3><%= link_to category.name, category, data: { turbolinks: 'false'}%></h3>
+    </div>
+  <%end%>
+  <button id="addCategory">
+    <h3><%= link_to "Add Category", new_category_path %></h3>
+  </button>
+</div>
+<nav>
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayInactive.svg" class="navIcon">
+  </div>
+  <div id="myTasks  " class="navActions">
+    <img src="/svgs/tasksInactive.svg" class="navIcon">
+  </div>
+  <div id="newTask" class="navActions">
+    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/categoriesActive.svg" class="navIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/profileInactive.svg" class="navIcon">
+  </div>
+</nav>

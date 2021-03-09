@@ -1,3 +1,80 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$head-font: 'M PLUS Rounded 1c', sans-serif;
+$body-font: 'Sintony', Sans-Serif;
+$primary-color: #2598fd;
+$secondary-color: #1e1e1e;
+$animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%, #a7d6ff 45%, #a7d6ff 55%, #239afe 65%);
+
+.nonLanding {
+  justify-content: center;
+  padding-bottom: .25rem;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding: .5rem .25rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #e7e7e7;
+  background-color: white;
+}
+.navIcon {
+  height: 1.5rem;
+}
+h2{
+  font-family: $head-font;
+  color: $primary-color;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+}
+.navActions {
+  text-align: center;
+}
+#newTask {
+  font-size: 0;
+  margin-top: -1rem;
+}
+#newTaskIcon {
+  display: block;
+  height: 2.75rem;
+}
+#categoriesProper {
+  padding: 1.25rem;
+  padding-top: 0;
+  padding-bottom: 4rem;
+}
+.categoryCard{
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: white;
+  box-shadow: 3px 3px 24px 0 #d4e1f480, 1px 1px 2px 0 #d4e1f480;
+}
+h3>a{
+  text-decoration: none;
+  color: $primary-color;
+  font-family: $body-font;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+#addCategory{
+  margin: 0;
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  background: $animated-gradient;
+  background-size: 300% 100%;
+  background-position: left;
+  transition: all .5s ease
+}
+#addCategory:hover{
+  background-position: right;
+  transition: all .5s ease
+}
+#addCategory>h3>a{
+  color: white;
+}
