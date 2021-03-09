@@ -2,6 +2,7 @@
   <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon"><h2>&nbsp;| Categories</h2>
 </header>
 <div id="categoriesProper">
+  <h2 id="headingNotMobile">Categories</h2>
   <% @categories.each do |category| %>
     <div class="categoryCard">
       <h3><%= link_to category.name, category, data: { turbolinks: 'false'}%></h3>
@@ -11,6 +12,32 @@
     <h3><%= link_to "Add Category", new_category_path %></h3>
   </button>
 </div>
+<nav id="sideNav">
+  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon">
+  <img src="<%= image_path('logoType.svg')%>" id="logoType">
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Today</span>
+  </div>
+  <div id="myTasks" class="navActions">
+    <img src="/svgs/tasksInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Tasks</span>
+  </div>
+  <div id="newTask" class="navActions">
+    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/categoriesActive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Categories</span>
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/profileInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Profile</span>
+  </div>
+  <button id="newTaskNotMobile" class="navActions">
+    <h3><%= link_to "New Task", new_category_path %></h3>
+  </button>
+</nav>
 <nav>
   <div id="tasksToday" class="navActions">
     <img src="/svgs/todayInactive.svg" class="navIcon">
