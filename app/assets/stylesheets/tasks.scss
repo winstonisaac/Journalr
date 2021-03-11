@@ -13,3 +13,15 @@ $animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%,
   letter-spacing: -.5px;
   color: $primary-color;
 }
+.taskCard{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (min-width: 580px){
+    max-width:40vw;
+  }
+  @media screen and (min-width: 1024px){
+    max-width: initial;
+    width: 360px;
+  }
+}

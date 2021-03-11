@@ -122,7 +122,12 @@ h3>a{
     margin: 1rem;
   }
 }
-#addCategory:hover, #addTask:hover{
+#addTask{
+  @media screen and (min-width: 580px){
+    padding: 1.25rem 2.5rem;
+  }
+}
+#addCategory:hover, #addTask:hover, #newTaskNotMobile:hover{
   background-position: right;
   transition: all .5s ease
 }
@@ -210,6 +215,12 @@ h3>a{
 #categoryDetails {
   margin: 1rem 0;
   padding: 0 1.25rem;
+  @media screen and (min-width: 580px){
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
+    position: relative;
+  }
 }
 #categoryDetails > h2{
   display: inline-block;
@@ -228,4 +239,19 @@ h3>a{
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: -.5px;
+}
+#categoryDetails > span {
+  display: none;
+  @media screen and (min-width: 768px){
+    position: absolute;
+    display: block;
+    float: left;
+    top: 0;
+    font-size: 2rem;
+    line-height: 62px;
+    color: $primary-color;
+  }
+  @media screen and (min-width: 1280px){
+    left: 5rem;
+  }
 }
