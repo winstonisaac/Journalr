@@ -1,3 +1,15 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$head-font: 'M PLUS Rounded 1c', sans-serif;
+$body-font: 'Sintony', Sans-Serif;
+$primary-color: #2598fd;
+$secondary-color: #1e1e1e;
+$animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%, #a7d6ff 45%, #a7d6ff 55%, #239afe 65%);
+#deadline {
+  font-family: $body-font;
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: -.5px;
+  color: $primary-color;
+}

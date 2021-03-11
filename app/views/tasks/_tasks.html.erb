@@ -1,6 +1,9 @@
 <% @tasks.each do |task| %>
-  <%=@category.id%>
-  <%= link_to task.name, category_task_path(@category, task), data: { turbolinks: 'false'}%>
-  <%=task.details%><br>
-  <%=task.deadline%><br>
+  <%= link_to category_task_path(@category, task), :action => 'go' do%>
+    <div class="taskCard">
+      <p id="deadline">DUE ON: <%=task.deadline%></p>
+      <h3><%=task.name%></h3>
+      <%=task.details%><br>
+    </div>
+  <%end%> 
 <%end%> 

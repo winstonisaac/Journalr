@@ -8,6 +8,7 @@ $secondary-color: #1e1e1e;
 $animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%, #a7d6ff 45%, #a7d6ff 55%, #239afe 65%);
 
 .nonLanding {
+  position: relative;
   justify-content: center;
   padding-bottom: .25rem;
   @media screen and (min-width: 580px){
@@ -47,6 +48,7 @@ h2{
   letter-spacing: -1px;
 }
 .navActions {
+  cursor: pointer;
   text-align: center;
   @media screen and (min-width: 1280px){
     display: flex;
@@ -65,7 +67,7 @@ h2{
     display: initial;
   }
 }
-#categoriesProper {
+#categoriesProper, #categoriesShowProper {
   margin: auto;
   max-width: 1200px;
   padding: 1.25rem;
@@ -81,7 +83,7 @@ h2{
     padding-top: 1.25rem;
   }
 }
-.categoryCard{
+.categoryCard, .taskCard{
   margin: 1.5rem 0;
   padding: 1.25rem;
   border-radius: 1.5rem;
@@ -101,8 +103,9 @@ h3>a{
   font-family: $body-font;
   font-weight: 700;
   font-size: 1.2rem;
+  letter-spacing: -.5px;
 }
-#addCategory{
+#addCategory, #addTask{
   margin: 0;
   width: 100%;
   border-radius: 1.5rem;
@@ -119,11 +122,11 @@ h3>a{
     margin: 1rem;
   }
 }
-#addCategory:hover{
+#addCategory:hover, #addTask:hover{
   background-position: right;
   transition: all .5s ease
 }
-#addCategory>h3>a, #newTaskNotMobile>h3>a{
+#addCategory>h3>a, #newTaskNotMobile>h3>a, #addTask>h3>a{
   color: white;
 }
 #sideNav {
@@ -150,6 +153,13 @@ h3>a{
     width: 100%;
     text-align: center;
   }
+}
+.nonLanding >span{
+  color: $primary-color;
+  font-size: 1.25rem;
+  display: inline-block;
+  position: absolute;
+  left: 1rem;
 }
 .navActions > span {
   display: none;
@@ -196,4 +206,26 @@ h3>a{
     align-self: flex-start;
     height: 2.25rem;
   }
+}
+#categoryDetails {
+  margin: 1rem 0;
+  padding: 0 1.25rem;
+}
+#categoryDetails > h2{
+  display: inline-block;
+}
+#editIcon {
+  height: 1rem;
+  margin-top: .35rem;
+}
+#categoriesShowProper > a{
+  text-decoration: none;
+}
+.taskCard > h3{
+  text-decoration: none;
+  color: $primary-color;
+  font-family: $body-font;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -.5px;
 }

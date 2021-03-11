@@ -1,15 +1,58 @@
-<h1><%= @category.name %></h1>
-<p><%= @category.details %></p>
-<br/>
-<button id="delete">
-Delete Story
-</button>
-<button>
-<%= link_to "Edit Story", edit_category_path(@category)%>
-</button>
-<button>
-<%= link_to "Back to Categories", root_path %>
-</button>
-<%= link_to "Add Task", new_category_task_path(@category) %>
-<%= render "tasks/tasks"%>
+<header class='nonLanding'>
+  <span>❮</span>
+  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon"><h2>&nbsp;| Category</h2>
+</header>
+<div id="categoriesShowProper">
+  <div id="categoryDetails">
+    <h2><%= @category.name %></h2>
+    <p><%= @category.details %>&nbsp;&nbsp;<%= link_to edit_category_path(@category) do%><img src="/svgs/editIcon.svg" id="editIcon"><%end%></p>
+    <%# <button id="delete">Delete Story</button>
+    <button><%= link_to "Edit Story", edit_category_path(@category)%></button>
+  </div>
+  <%= render "tasks/tasks"%>
+  <button id="addTask"><h3><%= link_to "Add Task", new_category_task_path(@category) %></h3></button>
+</div >
+<nav id="sideNav">
+  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon">
+  <img src="<%= image_path('logoType.svg')%>" id="logoType">
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Today</span>
+  </div>
+  <div id="myTasks" class="navActions">
+    <img src="/svgs/tasksInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Tasks</span>
+  </div>
+  <div id="newTask" class="navActions">
+    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/categoriesActive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Categories</span>
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/profileInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Profile</span>
+  </div>
+  <button id="newTaskNotMobile" class="navActions">
+    <h3><%= link_to "New Task", new_category_path %></h3>
+  </button>
+</nav>
+<nav>
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayInactive.svg" class="navIcon">
+  </div>
+  <div id="myTasks  " class="navActions">
+    <img src="/svgs/tasksInactive.svg" class="navIcon">
+  </div>
+  <div id="newTask" class="navActions">
+    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/categoriesActive.svg" class="navIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/profileInactive.svg" class="navIcon">
+  </div>
+</nav>
 <%= javascript_pack_tag 'delete_record' %>
