@@ -25,10 +25,10 @@ html{
 .profiler-result{
   display: none;
 }
-#signupCosmetic {
+#signupCosmetic, #loginCosmetic {
   display: none;
 }
-#signupForm{
+#signupForm, #loginForm{
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -80,7 +80,7 @@ input:focus, .field_dual > div > input:focus{
   margin-top: .5rem;
   font-family: 'Sintony', Sans-Serif;
 }
-#signupSubmit{
+#signupSubmit, #loginSubmit{
   cursor: pointer;
   width: 100%;
   border-radius: 1rem;
@@ -96,7 +96,7 @@ input:focus, .field_dual > div > input:focus{
   font-size: 1rem;
   color: white;
 }
-#signupSubmit:hover{
+#signupSubmit:hover, #loginSubmit:hover{
   background-position: right;
   transition: all .5s ease
 }
@@ -109,6 +109,12 @@ input:focus, .field_dual > div > input:focus{
   margin: auto;
   margin-bottom: 2rem;
 }
+#user_remember_me{
+  width: initial;
+}
+#user_remember_me + label {
+  padding: 0;
+}
 @media screen and (min-width: 1024px) {
   #realForm > img {
     display: none;
@@ -116,17 +122,17 @@ input:focus, .field_dual > div > input:focus{
   #realForm > h2{
     text-align: initial;
   }
-  #signupForm{
+  #signupForm, #loginForm{
     justify-content: space-between;
     align-items: initial;
   }
-  #signupProper{
+  #signupProper, #loginProper{
     width: 65vw;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #signupCosmetic{
+  #signupCosmetic, #loginCosmetic{
     display: initial;
     position: relative;
     background: linear-gradient(75deg, #5377f0 0%, #239afe 100%);
@@ -141,7 +147,7 @@ input:focus, .field_dual > div > input:focus{
     width: 70%;
     z-index: 5;
   }
-  #signupCosmetic > h2 {
+  #signupCosmetic > h2, #loginCosmetic > h2{
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 4rem;
     line-height: 100%;
@@ -152,7 +158,7 @@ input:focus, .field_dual > div > input:focus{
     height: 3.5rem;
     margin-bottom: 2.5rem;
   }
-  #signupCosmetic > span {
+  #signupCosmetic > span, #loginCosmetic > span {
     display: block;
     width: 100%;
     position: absolute;
