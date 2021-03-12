@@ -25,3 +25,159 @@ html{
 .profiler-result{
   display: none;
 }
+#signupCosmetic {
+  display: none;
+}
+#signupForm{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+}
+label{
+  padding-left: .35rem;
+  font-family: 'Sintony', Sans-Serif;
+  font-weight: 400;
+  letter-spacing: -.5px;
+  color: #2598fd;
+}
+.field, .field_dual {
+  margin-top: .5rem;
+}
+.field > input{
+  background-color: #edf4ff;
+  border: none;
+  border-radius: .65rem;
+  padding: .5rem;
+  border: 1px solid #edf4ff;
+  width: 15rem;
+}
+.field_dual {
+  display: flex;
+  justify-content: space-between;
+}
+.field_dual > div > input{
+  background-color: #edf4ff;
+  border: none;
+  border-radius: .65rem;
+  padding: .5rem;
+  border: 1px solid #edf4ff;
+  width: 7.25rem;
+}
+input:focus{
+  outline: none;
+  border: 1px solid #2598fd;
+}
+.alternateUser{
+  font-size: .85rem;
+  letter-spacing: -.5px;
+  color: #2598fd;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: .5rem;
+  font-family: 'Sintony', Sans-Serif;
+}
+#signupSubmit{
+  cursor: pointer;
+  width: 100%;
+  border-radius: 1rem;
+  padding: .75rem;
+  background: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%, #a7d6ff 45%, #a7d6ff 55%, #239afe 65%);
+  background-size: 300% 100%;
+  background-position: left;
+  transition: all .5s ease;
+  margin-top: 1rem;
+  border: none;
+  font-family: 'Sintony', Sans-Serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+}
+#signupSubmit:hover{
+  background-position: right;
+  transition: all .5s ease
+}
+#realForm > h2{
+  text-align: center;
+}
+#realForm > img {
+  height: 3rem;
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px){
+
+}
+@media screen and (min-width: 1024px) {
+  #realForm > img {
+    display: none;
+  }
+  #realForm > h2{
+    text-align: initial;
+  }
+  #signupForm{
+    justify-content: space-between;
+    align-items: initial;
+  }
+  #signupProper{
+    width: 65vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #signupCosmetic{
+    display: initial;
+    position: relative;
+    background: linear-gradient(75deg, #5377f0 0%, #239afe 100%);
+    width: 35vw;
+    padding: 3rem;
+    text-align: center;
+  }
+  .userHero {
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    z-index: 5;
+  }
+  #signupCosmetic > h2 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 4rem;
+    line-height: 100%;
+    color: white;
+    letter-spacing: -3px;
+  }
+  #userLogo {
+    height: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+  #signupCosmetic > span {
+    display: block;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    bottom: 1rem;
+    z-index: 10;
+    font-size: .75rem;
+    color: white;
+    font-family: 'Sintony', Sans-Serif;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .field > input{
+    width: 20rem;
+  }
+  .field_dual > div > input{
+    background-color: #edf4ff;
+    border: none;
+    border-radius: .65rem;
+    padding: .5rem;
+    border: 1px solid #edf4ff;
+    width: 9.75rem;
+  }
+}

@@ -1,30 +1,45 @@
-<h2>Sign up</h2>
-Poggers
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div id="signupForm">
+  <div id="signupCosmetic">
+    <img src="<%= image_path('/svgs/logoType_w.svg')%>" id="userLogo">
+    <img src="<%= image_path('signupHero.png')%>" class="userHero">
+    <h2>Freedom is here!</h2>
+    <span>Illustration from <a href="https://icons8.com/">icons8.com</a></span>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div id="signupProper">
+    <div id="realForm">
+      <img src="<%= image_path('/svgs/logoType.svg')%>">
+      <h2>Sign up to Journalr</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field_dual">
+          <div>
+            <%= f.label :first_name, "First Name" %><br />
+            <%= f.text_field :first_name, autofocus: true, autocomplete: 'off', required: 'true' %>
+          </div>
+          <div>
+            <%= f.label :last_name, "Last Name" %><br />
+            <%= f.text_field :last_name, autofocus: true, autocomplete: 'off', required: 'true' %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: 'off', required: 'true' %>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: 'off', required: 'true'  %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "Confirm Password" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: 'off', required: 'true'  %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Sign Up", id: "signupSubmit"%>
+        </div>
+        <%= link_to "Already have an account?", new_user_session_path, class:"alternateUser" %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
