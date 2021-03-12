@@ -1,10 +1,65 @@
-<% @tasks.each do |task| %>
-  <%category = task.category_id%>
-  <%= link_to category_task_path(category, task), :action => 'go' do%>
-    <div class="taskCard">
-      <p id="deadline">DUE ON: <%=task.deadline%></p>
-      <h3><%=task.name%></h3>
-      <%=task.details%><br>
-    </div>
-  <%end%> 
-<%end%> 
+<header class='nonLanding'>
+  <span>❮</span>
+  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon"><h2>&nbsp;| Tasks</h2>
+</header>
+<div id="tasksProper">
+  <h2 id="headingNotMobile">Tasks</h2>
+  <% @tasks.each do |task| %>
+    <%categoryID = task.category_id%>
+    <%category = Category.where(id: categoryID).pluck(:name)%>
+    <%= link_to category_task_path(categoryID, task), :action => 'go' do%>
+      <div class="taskCard">
+        <p id="deadline">DUE ON: <%=task.deadline%></p>
+        <h3><%=task.name%></h3>
+        <%=task.details%><br>
+        <%= link_to category_path(categoryID), data: { turbolinks: 'false'} do%><button id="categoryTag"><%=category[0]%></button><%end%>
+      </div>
+    <%end%> 
+  <%end%>
+  <button id="addCategory">
+    <h3><%= link_to "New Task", new_task_path %></h3>
+  </button>
+</div>
+<nav id="sideNav">
+  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon">
+  <img src="<%= image_path('logoType.svg')%>" id="logoType">
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Today</span>
+  </div>
+  <div id="myTasks" class="navActions">
+    <img src="/svgs/tasksInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Tasks</span>
+  </div>
+  <div id="newTask" class="navActions">
+    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/categoriesActive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Categories</span>
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/profileInactive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Profile</span>
+  </div>
+  <button id="newTaskNotMobile" class="navActions">
+    <h3><%= link_to "New Task", new_category_path %></h3>
+  </button>
+</nav>
+<nav>
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayInactive.svg" class="navIcon">
+  </div>
+  <div id="myTasks  " class="navActions">
+    <img src="/svgs/tasksInactive.svg" class="navIcon">
+  </div>
+  <div id="newTask" class="navActions">
+    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/categoriesActive.svg" class="navIcon">
+  </div>
+    <div id="tasksToday" class="navActions">
+    <img src="/svgs/profileInactive.svg" class="navIcon">
+  </div>
+</nav>

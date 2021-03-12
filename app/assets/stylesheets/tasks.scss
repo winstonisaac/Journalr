@@ -25,3 +25,16 @@ $animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%,
     width: 360px;
   }
 }
+.taskCard > a {
+  text-decoration: none;
+}
+.taskCard > a > h3{
+  color: $primary-color;
+  font-family: $body-font;
+}
+#categoryTag{
+  margin: 0;
+  font-size: .75rem;
+  padding: .25rem .5rem;
+  margin-top: .5rem;
+}
