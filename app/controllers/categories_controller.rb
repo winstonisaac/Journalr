@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :is_logged_in
+
   def index
     @categories = current_user.categories
   end
@@ -41,7 +43,15 @@ class CategoriesController < ApplicationController
 
     redirect_to categories_path
   end
+  
   private
+  
+  def is_logged_in
+    if current_user == nil
+      redirect_to root_path
+    end
+  end
+
   def category_params
     params.require(:category).permit(:name, :details)
   end

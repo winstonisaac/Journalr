@@ -4,7 +4,7 @@
 </header>
 <div id="categoriesShowProper">
   <div id="categoryDetails">
-    <span>❮</span>
+    <%= link_to categories_path do%><span>❮</span><%end%>
     <h2><%= @category.name %></h2>
     <p><%= @category.details %>&nbsp;&nbsp;<%= link_to edit_category_path(@category) do%><img src="/svgs/editIcon.svg" id="editIcon"><%end%></p>
     <%# <button id="delete">Delete Story</button>

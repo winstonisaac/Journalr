@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :is_logged_in
   before_action :get_category
   
   def index
@@ -42,6 +43,12 @@ class TasksController < ApplicationController
   end
 
   private
+
+  def is_logged_in
+    if current_user == nil
+      redirect_to root_path
+    end
+  end
 
   def get_category
     @category = Category.find(params[:category_id])
