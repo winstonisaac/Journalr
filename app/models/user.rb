@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :categories
+  has_many :tasks, through: :categories
   validates :first_name, :last_name, presence:true
 end

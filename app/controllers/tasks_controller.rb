@@ -1,9 +1,12 @@
 class TasksController < ApplicationController
   before_action :is_logged_in
-  before_action :get_category
+  before_action :get_category, except: :index
   
   def index
-    
+    if params[:category_id] != nil
+      redirect_to categories_path
+    end
+    @tasks = current_user.tasks
   end
 
   def new
