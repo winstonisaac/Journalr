@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :categories
   has_many :tasks, through: :categories
-  validates :first_name, :last_name, presence:true
+  validates :first_name, :last_name, :email, :encrypted_password, presence:true
 end
