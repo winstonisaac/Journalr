@@ -46,7 +46,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'database_rewinder'
+  gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   # Adds support for Capybara system testing and selenium driver
