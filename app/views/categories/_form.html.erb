@@ -1,7 +1,7 @@
 <%= form_with model: @category, :html => {:id => "newCategoryForm"} do |form|%>
   <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name, autocomplete:"off" %>
+    <%= form.text_field :name, autocomplete:"off", required: "true" %>
     <% category.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
