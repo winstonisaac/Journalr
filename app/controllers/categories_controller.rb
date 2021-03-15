@@ -31,7 +31,8 @@ class CategoriesController < ApplicationController
   def create
     @category = current_user.categories.build(category_params)
     if @category.save
-      redirect_to root_path
+      flash[:notice] = "Created the #{@category.name} category."
+      redirect_to categories_path
     else
       render :new
     end

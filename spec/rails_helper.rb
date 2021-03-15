@@ -20,6 +20,7 @@ end
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::IntegrationHelpers, type: :feature
   config.before(:suite) do
     if config.use_transactional_fixtures?
       raise(<<-MSG)

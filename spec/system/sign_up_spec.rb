@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Sign up process', type: :feature do
   let!(:user) { attributes_for :user}
   let(:user_existing) { create :user}
-  it 'should sign up with complete details' do
 
+  it 'should sign up with complete details' do
     visit new_user_registration_path
     within '#new_user' do
       fill_in 'user_first_name', with: user[:first_name]
@@ -20,7 +20,6 @@ RSpec.describe 'Sign up process', type: :feature do
   end
   
   it 'should not sign up when passwords do not match' do
-
     visit new_user_registration_path
     within '#new_user' do
       fill_in 'user_first_name', with: user[:first_name]
