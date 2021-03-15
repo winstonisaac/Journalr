@@ -1,6 +1,22 @@
-<h1>Edit Category</h1>
-
-<%= render "form", category: @category %>
-<button>
-<%= link_to "Back to Category Details", @category %>
-</button>
+<div class="formContainer">
+  <div class="deleteConfirmationContainer">
+    <div class="deleteConfirmationPopup">
+    <p>Are you sure you want to delete the <strong><%=@category.name%></strong> category?</p>
+    <div class="popupActions">
+      <button id="deleteConfirm">
+        <%= link_to "Delete!", category_path(@category), method: :delete%>
+      </button>
+      <button id="deleteCancel">
+        Not Quite
+      </button>
+    </div>
+    </div>
+  </div>
+  <div class="categoryForm">
+    <h1 id="formHeading">Edit Category</h1>
+    <%= render "form", category: @category %>
+    <button class='deleteButton'>Delete</button>
+    <%= link_to "Back to Category", @category , class:"alternateAction" %>
+  </div>
+</div>
+<%= javascript_pack_tag 'delete_popup'%>

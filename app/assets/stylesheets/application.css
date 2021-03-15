@@ -77,10 +77,10 @@ input:focus, .field_dual > div > input:focus{
   text-align: center;
   display: block;
   margin: auto;
-  margin-top: .5rem;
+  margin-top: 1rem;
   font-family: 'Sintony', Sans-Serif;
 }
-#signupSubmit, #loginSubmit, #newCategorySubmit{
+#signupSubmit, #loginSubmit, #newCategorySubmit, #deleteCancel{
   cursor: pointer;
   width: 100%;
   border-radius: 1rem;
@@ -96,9 +96,20 @@ input:focus, .field_dual > div > input:focus{
   font-size: 1rem;
   color: white;
 }
-#signupSubmit:hover, #loginSubmit:hover, #newCategorySubmit:hover{
+#signupSubmit:hover, #loginSubmit:hover, #newCategorySubmit:hover, #deleteCancel:hover{
   background-position: right;
   transition: all .5s ease
+}
+.deleteButton {
+  cursor: pointer;
+  width: 100%;
+  border-radius: .65rem;
+  padding: .5rem;
+  margin-top: 1rem;
+  border: 1px solid red;
+  font-family: 'Sintony', Sans-Serif;
+  font-size: 1rem;
+  color: red;
 }
 #realForm > h2{
   text-align: center;
@@ -118,6 +129,43 @@ input:focus, .field_dual > div > input:focus{
 #formHeading {
   font-size: 2.5rem;
   letter-spacing: -2.5px;
+}
+.deleteConfirmationContainer {
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  background-color: #00000070;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.deleteConfirmationPopup{
+  width: clamp(260px, 50vw, 720px);
+  background-color: white;
+  border-radius: .65rem;
+  border: none;
+  padding: .75rem;
+}
+button > a{
+  text-decoration: none;
+}
+#deleteConfirm {
+  border: 1px solid red;
+  border-radius: 1rem;
+  margin: 0;
+  color: red;
+  width: 48%;
+  padding: .75rem;
+  font-size: initial;
+}
+#deleteCancel {
+  margin: 0;
+  width: 48%;
+}
+.popupActions{
+  justify-content: space-between;
+  display: flex;
+  margin-top: .65rem;
 }
 @media screen and (min-width: 1024px) {
   #realForm > img {
