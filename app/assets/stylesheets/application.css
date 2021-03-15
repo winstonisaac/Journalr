@@ -69,7 +69,7 @@ input:focus, .field_dual > div > input:focus{
   outline: none;
   border: 1px solid #2598fd;
 }
-.alternateUser{
+.alternateUser, .alternateAction{
   font-size: .85rem;
   letter-spacing: -.5px;
   color: #2598fd;
@@ -80,7 +80,7 @@ input:focus, .field_dual > div > input:focus{
   margin-top: .5rem;
   font-family: 'Sintony', Sans-Serif;
 }
-#signupSubmit, #loginSubmit{
+#signupSubmit, #loginSubmit, #newCategorySubmit{
   cursor: pointer;
   width: 100%;
   border-radius: 1rem;
@@ -96,7 +96,7 @@ input:focus, .field_dual > div > input:focus{
   font-size: 1rem;
   color: white;
 }
-#signupSubmit:hover, #loginSubmit:hover{
+#signupSubmit:hover, #loginSubmit:hover, #newCategorySubmit:hover{
   background-position: right;
   transition: all .5s ease
 }
@@ -114,6 +114,10 @@ input:focus, .field_dual > div > input:focus{
 }
 #user_remember_me + label {
   padding: 0;
+}
+#formHeading {
+  font-size: 2.5rem;
+  letter-spacing: -2.5px;
 }
 @media screen and (min-width: 1024px) {
   #realForm > img {

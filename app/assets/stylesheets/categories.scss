@@ -255,3 +255,34 @@ h3>a{
     left: 5rem;
   }
 }
+.categoryForm{
+  display: inline-flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  border-radius: 2rem;
+  box-shadow: 3px 3px 24px 0 #d4e1f480, 1px 1px 2px 0 #d4e1f480;
+  background-color: white;
+}
+.formContainer{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  background:linear-gradient(75deg, #5377f0 0%, #239afe 100%);
+}
+#newCategoryForm{
+  width: 100%;
+}
+#newCategoryForm > div > input {
+  width: 100%;
+  background-color: #edf4ff;
+  border: none;
+  border-radius: .65rem;
+  padding: .5rem;
+  border: 1px solid #edf4ff;
+}
+#newCategoryForm > div > input:focus {
+  outline: none;
+  border: 1px solid #2598fd;
+}

@@ -1,21 +1,21 @@
-<%= form_with model: @category do |form| %>
+<%= form_with model: @category, :html => {:id => "newCategoryForm"} do |form|%>
   <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, autocomplete:"off" %>
     <% category.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :details %><br>
-    <%= form.text_field :details %><br>
+    <%= form.text_field :details, autocomplete:"off" %><br>
     <% category.errors.full_messages_for(:details).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit id: 'newCategorySubmit'%>
   </div>
 <% end %>

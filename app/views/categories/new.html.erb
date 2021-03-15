@@ -1,6 +1,7 @@
-<h1>New Category</h1>
-
-<%= render "form", category: @category, current_user: current_user %>
-<button class="fromForm">
-<%= link_to "Back to Stories List", root_path %>
-</button>
+<div class="formContainer">
+  <div class="categoryForm">
+    <h1 id="formHeading">New Category</h1>
+    <%= render "form", category: @category, current_user: current_user %>
+    <%= link_to "Back to Categories", categories_path, class:"alternateAction" %>
+  </div>
+</div>
