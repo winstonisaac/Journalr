@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/profile' => 'profile#index'
   root 'home#index'
   resources :tasks
   devise_for :users

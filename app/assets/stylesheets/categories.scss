@@ -67,7 +67,7 @@ h2{
     display: initial;
   }
 }
-#categoriesProper, #categoriesShowProper, #tasksProper {
+#categoriesProper, #categoriesShowProper, #tasksProper, #profileProper {
   margin: auto;
   max-width: 1200px;
   padding: 1.25rem;
@@ -97,7 +97,7 @@ h2{
     margin: 1rem;
   }
 }
-h3>a{
+h3>a, h3{
   text-decoration: none;
   color: $primary-color;
   font-family: $body-font;
@@ -105,7 +105,7 @@ h3>a{
   font-size: 1.2rem;
   letter-spacing: -.5px;
 }
-#addCategory, #addTask{
+#addCategory, #addTask, #signOut{
   margin: 0;
   width: 100%;
   border-radius: 1.5rem;
@@ -127,11 +127,11 @@ h3>a{
     padding: 1.25rem 2.5rem;
   }
 }
-#addCategory:hover, #addTask:hover, #newTaskNotMobile:hover{
+#addCategory:hover, #addTask:hover, #newTaskNotMobile:hover, #signOut{
   background-position: right;
   transition: all .5s ease
 }
-#addCategory>h3>a, #newTaskNotMobile>h3>a, #addTask>h3>a{
+#addCategory>h3>a, #newTaskNotMobile>h3>a, #addTask>h3>a, #signOut > h3{
   color: white;
 }
 #sideNav {
@@ -301,4 +301,7 @@ h3>a{
   color: red;
   font-style: italic;
   font-size: .75rem;
+}
+a{
+  text-decoration: none ;
 }
