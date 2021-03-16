@@ -15,43 +15,59 @@
 <nav id="sideNav">
   <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon">
   <img src="<%= image_path('logoType.svg')%>" id="logoType">
-  <div id="tasksToday" class="navActions">
-    <img src="/svgs/todayInactive.svg" class="navIcon">
-    <span>&nbsp;&nbsp;Today</span>
-  </div>
-  <div id="myTasks" class="navActions">
-    <img src="/svgs/tasksInactive.svg" class="navIcon">
-    <span>&nbsp;&nbsp;Tasks</span>
-  </div>
-  <div id="newTask" class="navActions">
-    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
-  </div>
+  <%= link_to tasks_path, :action => 'go' do%>
     <div id="tasksToday" class="navActions">
+      <img src="/svgs/todayInactive.svg" class="navIcon">
+      <span>&nbsp;&nbsp;Today</span>
+    </div>
+  <%end%>
+  <%= link_to tasks_path, :action => 'go' do%>
+    <div id="myTasks" class="navActions">
+      <img src="/svgs/tasksInactive.svg" class="navIcon">
+      <span>&nbsp;&nbsp;Tasks</span>
+    </div>
+  <%end%>
+  <%= link_to new_task_path, :action => 'go' do%>
+    <div id="newTask" class="navActions">
+      <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+    </div>
+  <%end%>
+  <div id="tasksToday" class="navActions">
     <img src="/svgs/categoriesActive.svg" class="navIcon">
     <span>&nbsp;&nbsp;Categories</span>
   </div>
+  <%= link_to profile_path, :action => 'go' do%>
     <div id="tasksToday" class="navActions">
-    <img src="/svgs/profileInactive.svg" class="navIcon">
-    <span>&nbsp;&nbsp;Profile</span>
-  </div>
+      <img src="/svgs/profileInactive.svg" class="navIcon">
+      <span>&nbsp;&nbsp;Profile</span>
+    </div>
+  <%end%>
   <button id="newTaskNotMobile" class="navActions">
-    <h3><%= link_to "New Task", new_category_path %></h3>
+    <h3><%= link_to "New Task", new_task_path %></h3>
   </button>
 </nav>
 <nav>
-  <div id="tasksToday" class="navActions">
-    <img src="/svgs/todayInactive.svg" class="navIcon">
-  </div>
-  <div id="myTasks  " class="navActions">
-    <img src="/svgs/tasksInactive.svg" class="navIcon">
-  </div>
-  <div id="newTask" class="navActions">
-    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
-  </div>
+  <%= link_to tasks_path, :action => 'go' do%>
     <div id="tasksToday" class="navActions">
+      <img src="/svgs/todayInactive.svg" class="navIcon">
+    </div>
+  <%end%>
+  <%= link_to tasks_path, :action => 'go' do%>
+    <div id="myTasks  " class="navActions">
+      <img src="/svgs/tasksInactive.svg" class="navIcon">
+    </div>
+  <%end%>
+  <%= link_to new_task_path, :action => 'go' do%>
+    <div id="newTask" class="navActions">
+      <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+    </div>
+  <%end%>
+  <div id="tasksToday" class="navActions">
     <img src="/svgs/categoriesActive.svg" class="navIcon">
   </div>
+  <%= link_to profile_path, :action => 'go' do%>
     <div id="tasksToday" class="navActions">
-    <img src="/svgs/profileInactive.svg" class="navIcon">
-  </div>
+      <img src="/svgs/profileInactive.svg" class="navIcon">
+    </div>
+  <%end%>
 </nav>

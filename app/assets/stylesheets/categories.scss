@@ -191,7 +191,7 @@ h3>a, h3{
     margin-top: 1rem;
   }
 }
-#sideNav > #newTask {
+#sideNav > a > #newTask {
   @media screen and (min-width: 1280px){
     display: none;
   }

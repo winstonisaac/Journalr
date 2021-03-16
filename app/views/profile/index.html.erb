@@ -25,37 +25,47 @@
       <span>&nbsp;&nbsp;Tasks</span>
     </div>
   <%end%>
-  <div id="newTask" class="navActions">
-    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
-  </div>
-    <div id="tasksToday" class="navActions">
-    <img src="/svgs/categoriesActive.svg" class="navIcon">
-    <span>&nbsp;&nbsp;Categories</span>
-  </div>
-  <%= link_to profile_path, :action => 'go' do%>
-    <div id="tasksToday" class="navActions">
-      <img src="/svgs/profileInactive.svg" class="navIcon">
-      <span>&nbsp;&nbsp;Profile</span>
+  <%= link_to new_task_path, :action => 'go' do%>
+    <div id="newTask" class="navActions">
+      <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
     </div>
   <%end%>
+  <%= link_to categories_path, :action => 'go' do%>
+    <div id="tasksToday" class="navActions">
+      <img src="/svgs/categoriesInactive.svg" class="navIcon">
+      <span>&nbsp;&nbsp;Categories</span>
+    </div>
+  <%end%>
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/profileActive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Profile</span>
+  </div>
   <button id="newTaskNotMobile" class="navActions">
-    <h3><%= link_to "New Task", new_category_path %></h3>
+    <h3><%= link_to "New Task", new_task_path %></h3>
   </button>
 </nav>
 <nav>
+  <%= link_to tasks_path, :action => 'go' do%>
+    <div id="tasksToday" class="navActions">
+      <img src="/svgs/todayInactive.svg" class="navIcon">
+    </div>
+  <%end%>
+  <%= link_to tasks_path, :action => 'go' do%>
+    <div id="myTasks  " class="navActions">
+      <img src="/svgs/tasksInactive.svg" class="navIcon">
+    </div>
+  <%end%>
+  <%= link_to new_task_path, :action => 'go' do%>
+    <div id="newTask" class="navActions">
+      <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
+    </div>
+  <%end%>
+  <%= link_to categories_path, :action => 'go' do%>
+    <div id="tasksToday" class="navActions">
+      <img src="/svgs/categoriesInactive.svg" class="navIcon">
+    </div>
+  <%end%>
   <div id="tasksToday" class="navActions">
-    <img src="/svgs/todayInactive.svg" class="navIcon">
-  </div>
-  <div id="myTasks  " class="navActions">
-    <img src="/svgs/tasksInactive.svg" class="navIcon">
-  </div>
-  <div id="newTask" class="navActions">
-    <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
-  </div>
-    <div id="tasksToday" class="navActions">
-    <img src="/svgs/categoriesActive.svg" class="navIcon">
-  </div>
-    <div id="tasksToday" class="navActions">
-    <img src="/svgs/profileInactive.svg" class="navIcon">
+    <img src="/svgs/profileActive.svg" class="navIcon">
   </div>
 </nav>
