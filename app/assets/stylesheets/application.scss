@@ -1,0 +1,53 @@
+$head-font: 'M PLUS Rounded 1c', sans-serif;
+$body-font: 'Sintony', Sans-Serif;
+$primary-color: #2598fd;
+$secondary-color: #1e1e1e;
+$animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%, #a7d6ff 45%, #a7d6ff 55%, #239afe 65%);
+.notice{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  padding: 0 1rem;
+  justify-content: center;
+  z-index: 100;
+  top: 1rem;
+}
+.notice > div{
+  width: clamp(250px, 90vw, 720px);
+  font-family: $body-font;
+  color: #2598fd;
+  font-size: .75rem;
+  opacity: 1;
+  position: absolute;
+  padding: 1rem;
+  border-radius: .35rem;
+  background: linear-gradient(90deg, #239afe .25rem, white .25rem);
+  border: none;
+  box-shadow: 3px 3px 24px 0 #d4e1f480, 1px 1px 2px 0 #d4e1f480;
+}
+#noticeContent{
+  @media screen and (min-width: 1024px){
+    margin-left: 9rem;
+    font-size: 1rem;
+  }
+}
+.notice > div > span {
+  display: inline-block;
+  position: absolute;
+  top: .25rem;
+  right: .25rem;
+  cursor: pointer;
+}
+.fadeOut {
+  display: none;
+	animation: fadeOut 3s ease-out both;
+}
+@keyframes fadeOut {
+  80%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

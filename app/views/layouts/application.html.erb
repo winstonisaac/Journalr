@@ -12,8 +12,11 @@
     <link rel="icon" href="/svgs/logoIcon.svg">
   </head>
   <body>
-    <p class="notice"> <%= notice %> </p>
+    <div class="notice fadeOut">
+      <div id="noticeContent"><%= notice %><span>✖</span></div>
+    </div>
     <p class="alert"> <%= alert %> </p>
     <%= yield %>
+    <%= javascript_pack_tag 'flash_animation'%>
   </body>
 </html>
