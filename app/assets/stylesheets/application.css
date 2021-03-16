@@ -167,6 +167,9 @@ button > a{
   display: flex;
   margin-top: .65rem;
 }
+#realForm{
+  max-width: 15rem;
+}
 @media screen and (min-width: 1024px) {
   #realForm > img {
     display: none;
@@ -224,6 +227,9 @@ button > a{
   }
 }
 @media screen and (min-width: 1280px) {
+  #realForm{
+    max-width: 20rem;
+  }
   .field > input{
     width: 20rem;
   }

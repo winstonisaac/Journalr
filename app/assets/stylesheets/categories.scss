@@ -274,7 +274,7 @@ h3>a{
 #newCategoryForm{
   width: 100%;
 }
-#newCategoryForm > div > input {
+#newCategoryForm > div > input, .field_with_errors > input {
   width: 100%;
   background-color: #edf4ff;
   border: none;
@@ -285,4 +285,20 @@ h3>a{
 #newCategoryForm > div > input:focus {
   outline: none;
   border: 1px solid #2598fd;
+}
+.field_with_errors > label{
+  color: red;
+}
+.field_with_errors > input {
+  border: 1px solid red;
+}
+.field_with_errors + br {
+  display: none;
+}
+.field_with_errors + div, #error_explanation {
+  padding-left: .35rem;
+  font-family: $body-font;
+  color: red;
+  font-style: italic;
+  font-size: .75rem;
 }
