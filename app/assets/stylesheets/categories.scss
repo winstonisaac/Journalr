@@ -79,7 +79,7 @@ h2{
     justify-content: center;
   }
   @media screen and (min-width: 768px){
-    padding-left: 10.25rem;
+    padding-left: 7.5rem;
     padding-top: 1.25rem;
   }
 }
@@ -304,4 +304,15 @@ h3>a, h3{
 }
 a{
   text-decoration: none ;
+}
+#emptyStateDiv {
+  margin-top: 4rem;
+  text-align: center;
+}
+#emptyState{
+  width: 200px;
+}
+#emptyState + h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }

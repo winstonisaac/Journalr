@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :is_logged_in
-  before_action :get_category, except: :index
+  before_action :get_category, except: [:index, :today]
   
   def index
     if params[:category_id] != nil
@@ -8,7 +8,9 @@ class TasksController < ApplicationController
     end
     @tasks = current_user.tasks
   end
-
+  def today
+    @tasks = current_user.tasks.where(deadline: Date.today)
+  end
   def new
     @task = @category.tasks.build
   end

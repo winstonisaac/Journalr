@@ -1,38 +1,42 @@
 <header class='nonLanding'>
   <span>❮</span>
-  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon"><h2>&nbsp;| Tasks</h2>
+  <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon"><h2>&nbsp;| Today</h2>
 </header>
 <div id="tasksProper">
-  <h2 id="headingNotMobile">Tasks</h2>
-  <% @tasks.each do |task| %>
-    <%categoryID = task.category_id%>
-    <%category = Category.where(id: categoryID).pluck(:name)%>
-    <%= link_to category_task_path(categoryID, task), :action => 'go' do%>
-      <div class="taskCard">
-        <p id="deadline">DUE ON: <%=task.deadline%></p>
-        <h3><%=task.name%></h3>
-        <%=task.details%><br>
-        <%= link_to category_path(categoryID), data: { turbolinks: 'false'} do%><button id="categoryTag"><%=category[0]%></button><%end%>
-      </div>
-    <%end%> 
+  <h2 id="headingNotMobile">Today</h2>
+  <% if @tasks != nil%>
+    <% @tasks.each do |task| %>
+      <%categoryID = task.category_id%>
+      <%category = Category.where(id: categoryID).pluck(:name)%>
+      <%= link_to category_task_path(categoryID, task), :action => 'go' do%>
+        <div class="taskCard">
+          <p id="deadline">DUE ON: <%=task.deadline%></p>
+          <h3><%=task.name%></h3>
+          <%=task.details%><br>
+          <%= link_to category_path(categoryID), data: { turbolinks: 'false'} do%><button id="categoryTag"><%=category[0]%></button><%end%>
+        </div>
+      <%end%>
+    <%end%>
+  <%else%>
+    <div id="emptyStateDiv">
+      <img src="<%= image_path('emptyState.png')%>" id="emptyState">
+      <h2>Yay! All done!</h2>
+    </div>
   <%end%>
-  <button id="addCategory">
-    <h3><%= link_to "New Task", new_task_path %></h3>
-  </button>
 </div>
 <nav id="sideNav">
   <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon">
   <img src="<%= image_path('logoType.svg')%>" id="logoType">
-  <%= link_to today_path, :action => 'go' do%>
-    <div id="tasksToday" class="navActions">
-      <img src="/svgs/todayInactive.svg" class="navIcon">
-      <span>&nbsp;&nbsp;Today</span>
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayActive.svg" class="navIcon">
+    <span>&nbsp;&nbsp;Today</span>
+  </div>
+  <%= link_to tasks_path, :action => 'go' do%>
+    <div id="myTasks" class="navActions">
+      <img src="/svgs/tasksInactive.svg" class="navIcon">
+      <span>&nbsp;&nbsp;Tasks</span>
     </div>
   <%end%>
-  <div id="myTasks" class="navActions">
-    <img src="/svgs/tasksActive.svg" class="navIcon">
-    <span>&nbsp;&nbsp;Tasks</span>
-  </div>
   <%= link_to new_task_path, :action => 'go' do%>
     <div id="newTask" class="navActions">
       <img src="/svgs/newTask.svg" class="navIcon" id="newTaskIcon">
@@ -55,14 +59,12 @@
   </button>
 </nav>
 <nav>
-  <%= link_to tasks_path, :action => 'go' do%>
-    <div id="tasksToday" class="navActions">
-      <img src="/svgs/todayInactive.svg" class="navIcon">
-    </div>
-  <%end%>
+  <div id="tasksToday" class="navActions">
+    <img src="/svgs/todayActive.svg" class="navIcon">
+  </div>
   <%= link_to tasks_path, :action => 'go' do%>
     <div id="myTasks  " class="navActions">
-      <img src="/svgs/tasksActive.svg" class="navIcon">
+      <img src="/svgs/tasksInactive.svg" class="navIcon">
     </div>
   <%end%>
   <%= link_to new_task_path, :action => 'go' do%>
