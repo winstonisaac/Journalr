@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :is_logged_in
-  before_action :get_category, except: [:index, :today]
+  before_action :get_category, except: [:index, :today, :new]
   
   def index
     if params[:category_id] != nil
@@ -12,7 +12,10 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks.where(deadline: Date.today)
   end
   def new
-    @task = @category.tasks.build
+    if params[:category_id] != nil
+      get_category()
+      @task = @category.tasks.build
+    end
   end
 
   def show
@@ -24,7 +27,12 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to category_path(params[:category_id])
     else
-      render :new
+      if params[:from_dropdown] != nil
+        flash[:notice] = "Please fill out the required fields."
+        redirect_to new_task_path
+      else
+        render :new
+      end
     end
   end
   

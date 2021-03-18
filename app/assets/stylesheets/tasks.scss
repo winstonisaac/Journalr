@@ -38,3 +38,16 @@ $animated-gradient: linear-gradient(75deg, #5377f0 0%, #239afe 20%, #239afe 33%,
   padding: .25rem .5rem;
   margin-top: .5rem;
 }
+select{
+  width: 100%;
+  background-color: #edf4ff;
+  border: none;
+  border-radius: .65rem;
+  padding: .5rem;
+  border: 1px solid #edf4ff;
+}
+select:focus{
+  border-radius: .65rem .65rem 0 0;
+  outline: none;
+  border: 1px solid #2598fd;
+}

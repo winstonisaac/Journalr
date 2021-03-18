@@ -1,0 +1,22 @@
+<%= form_with url: "/tasks", :html => {:id => "newCategoryForm"}, method: :post do |form| %>
+  <%= form.hidden_field "from_dropdown", value: true %>
+  <div class="field">
+    <%= form.label :name%><br>
+    <%= text_field("task", "name", autocomplete:'off', required:'true')%>
+  </div>
+  <div class="field">
+    <%= form.label :details %><br>
+    <%= form.text_field :details, autocomplete:"off" %>
+  </div>
+  <div class="field">
+    <%= form.label :deadline%><br>
+    <%=date_field("task", "deadline", min: Date.today, required:'true')%>
+  </div>
+  <div class="field">
+    <label for="category_id">Category</label>
+    <%=collection_select("", "category_id", current_user.categories, :id, :name)%>
+  </div>
+  <div> 
+    <%= form.submit "Create Task", id: 'newCategorySubmit'%>
+  </div>
+<% end %>

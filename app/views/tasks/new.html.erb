@@ -1,1 +1,11 @@
-<%= render "form"%>
+<div class="formContainer">
+  <div class="categoryForm">
+    <h1 id="formHeading">New Task</h1>
+    <%if @category != nil%>
+      <%= render "form"%>
+    <%else%>
+      <%= render "form_with_dropdown"%>
+    <%end%>
+    <%= link_to "Back to Dashboard", today_path, class:"alternateAction" %>
+  </div>
+</div>
