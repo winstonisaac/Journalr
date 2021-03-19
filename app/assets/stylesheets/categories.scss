@@ -171,12 +171,13 @@ h3>a, h3{
     text-align: center;
   }
 }
-.nonLanding >span{
+.nonLanding > a > span{
   color: $primary-color;
   font-size: 1.25rem;
   display: inline-block;
   position: absolute;
   left: 1rem;
+  bottom: .5rem;
 }
 .navActions > span {
   display: none;

@@ -1,6 +1,6 @@
 
 <header class='nonLanding'>
-  <span>❮</span>
+  <%= link_to tasks_path do%><span>❮</span><%end%>
   <img src="<%= image_path('logoIcon.svg')%>" id="logoIcon"><h2>&nbsp;| Task</h2>
 </header>
 <div id="categoriesShowProper">
@@ -56,7 +56,7 @@
   </button>
 </nav>
 <nav>
-  <%= link_to tasks_path, :action => 'go' do%>
+  <%= link_to today_path, :action => 'go' do%>
     <div id="tasksToday" class="navActions">
       <img src="/svgs/todayInactive.svg" class="navIcon">
     </div>
