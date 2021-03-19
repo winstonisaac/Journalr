@@ -25,6 +25,7 @@ class TasksController < ApplicationController
   def create
     @task = @category.tasks.build(task_params)
     if @task.save
+      flash[:notice] = "Created the #{@task.name} category."
       redirect_to category_path(params[:category_id])
     else
       if params[:from_dropdown] != nil

@@ -3,9 +3,11 @@
     <div class="deleteConfirmationPopup">
     <p>Are you sure you want to delete the <strong><%=@task.name%></strong> task?</p>
     <div class="popupActions">
-      <button id="deleteConfirm">
-        <%= link_to "Delete!", task_path(@task), method: :delete%>
-      </button>
+      <%= link_to task_path(@task), id:"deleteConfirmAction", method: :delete do%>
+        <button id="deleteConfirm">
+          Delete!
+        </button>
+      <%end%>
       <button id="deleteCancel">
         Not Quite
       </button>
