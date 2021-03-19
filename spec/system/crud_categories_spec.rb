@@ -29,7 +29,7 @@ RSpec.describe 'CRUD categories', type: :feature do
     expect(page).to have_content category[:details]
 
     #Category Updating
-    page.all('a')[1].click
+    page.all('a')[2].click
     within "#newCategoryForm" do
       fill_in "category_name", with: category[:name] + "_"
       fill_in "category_details", with: category[:details] + "_"
@@ -39,10 +39,8 @@ RSpec.describe 'CRUD categories', type: :feature do
     expect(page).to have_content category[:details] + "_"
 
     #Category Deletion
-    page.all('a')[1].click
-    within "#deleteConfirm" do
-      click_link "Delete!"
-    end
+    page.all('a')[2].click
+    find("#deleteConfirmAction", visible: false).click
     expect(page).to have_content "Deleted the #{category[:name]}_ category."
   end
 
@@ -64,7 +62,7 @@ RSpec.describe 'CRUD categories', type: :feature do
     within "#categoriesProper" do
       click_link category[:name]
     end
-    page.all('a')[1].click
+    page.all('a')[2].click
     within "#newCategoryForm" do
       fill_in "category_name", with: ""
       fill_in "category_details", with: ""
