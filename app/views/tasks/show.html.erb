@@ -9,7 +9,14 @@
     <%categoryID = @task.category_id%>
     <%category = Category.where(id: categoryID).pluck(:name)%>
     <h1 id="taskName"><%= @task.name %>&nbsp;&nbsp;<%= link_to edit_category_task_path(@task.category_id, @task) do%><img src="/svgs/editIcon.svg" id="editIcon"><%end%></h1><br>
-    <%= link_to category_path(categoryID), data: { turbolinks: 'false'} do%><button id="categoryTag"><%=category[0]%></button><%end%><br><br>
+    <%= link_to category_path(categoryID), data: { turbolinks: 'false'} do%><button id="categoryTag"><%=category[0]%></button><%end%>
+    <button id="<%= @task.is_finished ? 'finishedTag' : 'notFinishedTag' %>">
+        <%if @task.is_finished%>
+          <%="✅ Finished"%>
+        <%else%>
+          <%="⌛ Unfinished"%>
+        <%end%>
+    </button><br><br>
     <p><%= @task.details%></p>
     <p id="dueOn">Due on <strong><%= @task.deadline%></strong>.</p>
   </div>

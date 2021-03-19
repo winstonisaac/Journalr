@@ -3,7 +3,17 @@
     <div class="taskCard">
       <p id="deadline">DUE ON: <%=task.deadline%></p>
       <h3><%=task.name%></h3>
-      <%=task.details%><br>
+      <%=task.details%>
+      <%if task.details==""%>
+        <em><%="No details provided."%></em>
+      <%end%><br>
+      <button id="<%= task.is_finished ? 'finishedTag' : 'notFinishedTag' %>">
+        <%if task.is_finished%>
+          <%="✅ Finished"%>
+        <%else%>
+          <%="⌛ Unfinished"%>
+        <%end%>
+      </button>
     </div>
   <%end%> 
 <%end%> 
