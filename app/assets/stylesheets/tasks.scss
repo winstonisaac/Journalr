@@ -83,3 +83,10 @@ select:focus{
     display: initial;
   }
 }
+#checkBox{
+  margin-top: .8rem;
+}
+input[type="checkbox"]{
+  margin-left: .35rem;
+  transform: scale(1.25);
+}

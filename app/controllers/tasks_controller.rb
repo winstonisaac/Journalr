@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :is_logged_in
-  before_action :get_category, except: [:index, :today, :new]
+  before_action :get_category, except: [:index, :today, :new, :destroy]
   
   def index
     if params[:category_id] != nil
@@ -51,8 +51,14 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = @category.tasks.find(params[:id])
+    if @category != nil
+      @task = @category.tasks.find(params[:id])
+    else
+      @task = current_user.tasks.find(params[:id])
+    end
+    flash[:notice] = "Deleted the #{@task.name} task."
     @task.destroy
+    redirect_to tasks_path
   end
 
   private
@@ -68,6 +74,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :details, :deadline)
+    params.require(:task).permit(:name, :details, :deadline, :is_finished)
   end
 end

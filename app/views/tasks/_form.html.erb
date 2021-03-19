@@ -20,7 +20,12 @@
       <div><%= message %></div>
     <% end %>
   </div>
+  <%= hidden_field_tag 'task[is_finished]', false %>
+  <div id="checkBox">
+    <%= check_box("task", "is_finished", options = {}, checked_value = true, unchecked_value = false) %>
+    <%= form.label "Finished?"%>
+  </div>
   <div>
-    <%= form.submit "Create Task", id: 'newCategorySubmit' %>
+    <%= form.submit id: 'newCategorySubmit' %>
   </div>
 <% end %>
