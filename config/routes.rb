@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/today' => 'tasks#today'
+  get '/users' => 'home#index'
   get '/profile' => 'profile#index'
   root 'home#index'
   resources :tasks

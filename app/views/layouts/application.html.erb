@@ -13,9 +13,8 @@
   </head>
   <body>
     <div class="notice fadeOut">
-      <div id="noticeContent"><%= notice %><span>✖</span></div>
+      <div id="noticeContent"><%= notice %><%= alert %><span>✖</span></div>
     </div>
-    <p class="alert"> <%= alert %> </p>
     <%= yield %>
     <%= javascript_pack_tag 'flash_animation'%>
   </body>
