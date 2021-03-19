@@ -12,6 +12,10 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks.where(deadline: Date.today)
   end
   def new
+    if current_user.categories.count == 0
+      flash[:notice] = "Please create a category first."
+      redirect_to new_category_path
+    end
     if params[:category_id] != nil
       get_category()
       @task = @category.tasks.build
