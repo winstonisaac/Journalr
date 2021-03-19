@@ -4,31 +4,35 @@
 </header>
 <div id="tasksProper">
   <h2 id="headingNotMobile">Today</h2>
-  <% if @tasks != nil%>
-    <% @tasks.each do |task| %>
-      <%categoryID = task.category_id%>
-      <%category = Category.where(id: categoryID).pluck(:name)%>
-      <%= link_to category_task_path(categoryID, task), :action => 'go' do%>
-        <div class="taskCard">
-          <p id="deadline">DUE ON: <%=task.deadline%></p>
-          <h3><%=task.name%></h3>
-          <%=task.details%>
-          <%if task.details==""%>
-            <em><%="No details provided."%></em>
-          <%end%>
-          <br>
-          <%= link_to category_path(categoryID), data: { turbolinks: 'false'} do%><button id="categoryTag"><%=category[0]%></button><%end%>
-          <button id="<%= task.is_finished ? 'finishedTag' : 'notFinishedTag' %>">
-            <%if task.is_finished%>
-              <%="✅ Finished"%>
-            <%else%>
-              <%="⌛ Unfinished"%>
-            <%end%>
-          </button>
-        </div>
-      <%end%>
+  <%today_count = 0%>
+  <% @tasks.each do |task| %>
+    <%if task.is_finished%>
+      <%next%>
     <%end%>
-  <%else%>
+    <%today_count ++%>
+    <%categoryID = task.category_id%>
+    <%category = Category.where(id: categoryID).pluck(:name)%>
+    <%= link_to category_task_path(categoryID, task), :action => 'go' do%>
+      <div class="taskCard">
+        <p id="deadline">DUE ON: <%=task.deadline%></p>
+        <h3><%=task.name%></h3>
+        <%=task.details%>
+        <%if task.details==""%>
+          <em>No details provided.</em>
+        <%end%>
+        <br>
+        <%= link_to category_path(categoryID), data: { turbolinks: 'false'} do%><button id="categoryTag"><%=category[0]%></button><%end%>
+        <button id="<%= task.is_finished ? 'finishedTag' : 'notFinishedTag' %>">
+          <%if task.is_finished%>
+            <%="✅ Finished"%>
+          <%else%>
+            <%="⌛ Unfinished"%>
+          <%end%>
+        </button>
+      </div>
+    <%end%>
+  <%end%>
+  <%if today_count ==0 %>
     <div id="emptyStateDiv">
       <img src="<%= image_path('emptyState.png')%>" id="emptyState">
       <h2>Yay! All done!</h2>
